@@ -101,11 +101,13 @@ def test_update_stock_decrease():
     # Arrange
     add_product("P001", "Laptop", 300, 20)
 
-    # Act
-    new_stock = update_stock("P001", -10)
+    # Act & Assert
+    new_stock = update_stock("P001", 5)
+    assert new_stock == 25
 
-    # Assert
-    assert new_stock == 10
+    # Act & Assert
+    new_stock = update_stock("P001", -10)
+    assert new_stock == 15
 
 
 # 6
